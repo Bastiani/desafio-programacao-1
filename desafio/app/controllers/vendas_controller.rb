@@ -4,7 +4,11 @@ class VendasController < ApplicationController
 	end
 	
 	def importar
-		Vendas.importar(params[:file])
-		redirect_to :action => "resultado"
+		if params[:file] != nil
+			Vendas.importar(params[:file])
+			redirect_to :action => "resultado"
+		else
+			redirect_to root_url
+		end		
 	end
 end
