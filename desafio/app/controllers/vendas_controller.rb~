@@ -1,0 +1,12 @@
+class VendasController < ApplicationController
+	#Método 'resultado', retorna a receita bruta total das vendas	
+	def resultado
+		@resultado = Vendas.resultado
+	end
+	
+	#Método 'importar', lê o arquivo enviado pelo usuário e grava no banco
+	def importar
+		Vendas.importar(params[:file])
+		redirect_to :action => "resultado"
+	end
+end

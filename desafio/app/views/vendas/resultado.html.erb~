@@ -1,0 +1,2 @@
+<b>Total: </b><%= @resultado %><br/>
+<%= link_to 'Voltar', controller: 'vendas', action: 'index' %>

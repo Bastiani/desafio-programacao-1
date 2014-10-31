@@ -1,0 +1,12 @@
+<div style="margin: 4px;">
+	<h2>Importar arquivo de vendas</h2>
+
+	<%= form_tag importar_vendas_path, multipart: true do %>
+		<%= file_field_tag :file %>
+		<%= submit_tag "Importar" %>
+	<% end %>
+
+	<p>
+		<i>Sisl@m, teste por Rafael Campos de Bastiani</i>
+	</p>
+</div>

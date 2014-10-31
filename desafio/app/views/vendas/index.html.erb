@@ -1,0 +1,12 @@
+<div style="background-color: rgb(235, 235, 235); border-color: rgb(164, 164, 164); border-radius: 3px; border-style: solid; border-width: 3px; color: rgb(42, 42, 42); font-family: 'Segoe UI',Verdana,Helvetica,sans-serif; margin: 4px; padding: 5px;">
+	<h2>Importar arquivo de vendas</h2>
+
+	<%= form_tag importar_vendas_path, multipart: true do %>
+		<%= file_field_tag :file %>
+		<%= submit_tag "Importar" %>
+	<% end %>
+
+	<p>
+		<i>Sisl@m, teste por Rafael Campos de Bastiani</i>
+	</p>
+</div>

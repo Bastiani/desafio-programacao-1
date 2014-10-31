@@ -1,0 +1,11 @@
+== README
+
+* Ruby version: ruby 2.1.3p242
+
+* Database creation:
+	rails generate model Vendas purchaser_name:string item_description:string item_price:float purchase_count:integer merchant_address:string merchant_name:string
+
+* Database initialization:
+	rake db:migrate
+
+Documentação geradado com rake doc:app e disponivel em doc/app

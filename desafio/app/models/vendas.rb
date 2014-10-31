@@ -1,0 +1,19 @@
+class Vendas < ActiveRecord::Base
+	#Método 'importar', lê o arquivo enviado pelo usuário e grava no banco
+	def self.importar(arquivo)
+		File.open(arquivo.path, "r").drop(1).each do |linha|
+			purchaser_name, item_description, item_price, purchase_count, merchant_address, merchant_name = linha.strip.split("\t")
+			v = Vendas.new(:purchaser_name => purchaser_name, :item_description => item_description, :item_price => item_price, :purchase_count => purchase_count, :merchant_address => merchant_address, :merchant_name => merchant_name)
+			v.save
+		end
+	end
+
+	#Método 'resultado', retorna a receita bruta total das vendas	
+	def self.resultado
+		@resultado = 0
+		Vendas.find_each do |coluna|			
+			@resultado += coluna.item_price * coluna.purchase_count
+		end
+		@resultado
+	end	
+end
